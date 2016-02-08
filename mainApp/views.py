@@ -12,11 +12,13 @@ def index(request):
 
 
 def venue(request):
-    return render(request, 'venue.html', {"story_list": Item.objects.filter(page__name="venue")})
+    story_list = Item.objects.filter(page__name="venue").order_by('order')
+    return render(request, 'venue.html', {"story_list": story_list})
 
 
 def accomodation(request):
-    return render(request, 'accomodation.html')
+    story_list = Item.objects.filter(page__name="accomodation").order_by('order')
+    return render(request, 'accomodation.html', {"story_list": story_list})
 
 
 def contactus(request):
@@ -24,7 +26,8 @@ def contactus(request):
 
 
 def travel(request):
-    return render(request, 'baseTemplates/infoPageBase.html', {"story_list": Item.objects.filter(page__name="index")})
+    story_list = Item.objects.filter(page__name="travel").order_by('order')
+    return render(request, 'baseTemplates/infoPageBase.html', {"story_list": story_list})
 
 
 def cookies(request):
