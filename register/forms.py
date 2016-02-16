@@ -20,8 +20,8 @@ class UserForm(forms.ModelForm):
     country = forms.CharField(max_length=60, required=True)
     telephone = forms.CharField(max_length=15, required=True)
     email = forms.EmailField(max_length=60, required=True)
-    fee_normal = forms.BooleanField(label="I wish to register for the conference at the normal price of £500", required=False)
-    fee_student = forms.BooleanField(label="I wish to register for the conference at the reduced price of £350 "
+    fee_normal = forms.BooleanField(label="I wish to register for the conference at the normal price of £450", required=False)
+    fee_student = forms.BooleanField(label="I wish to register for the conference at the reduced price of £300 "
                                            "(bona fide students only)", required=False)
 
     helper = FormHelper()

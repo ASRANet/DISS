@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from register.models import User
 from register.forms import UserForm
+from django.core.mail import send_mail
 
 
 def index(request):

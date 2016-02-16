@@ -17,8 +17,7 @@ def venue(request):
 
 
 def accomodation(request):
-    story_list = Item.objects.filter(page__name="accomodation").order_by('order')
-    return render(request, 'accomodation.html', {"story_list": story_list})
+    return render(request, 'accomodation.html')
 
 
 def contactus(request):

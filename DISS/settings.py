@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'mainApp',
     'register',
     'uploadAbstract',
+    'email_html',
     'ckeditor'
 ]
 
@@ -124,6 +125,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+SESSION_COOKIE_SECURE = True
+
+EMAIL_HOST = 'mail.netcetera.co.uk'
+EMAIL_HOST_USER = 'diss@asranet.co.uk'
+EMAIL_HOST_PASSWORD = 'microsoftswallows'
+EMAIL_PORT = 25
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

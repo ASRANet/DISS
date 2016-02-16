@@ -7,6 +7,9 @@ from uploadAbstract.models import SubmittedAbstract
 
 
 class UserForm(forms.ModelForm):
+    salutation = forms.ChoiceField(choices=(("Mr.", "Mr."), ("Mrs.", "Mrs."), ("Ms.", "Ms."), ("Dr.", "Dr."),
+                                            ("Prof.", "Prof."), ("Sir", "Sir"), ("Lady", "Lady"), ("Lord", "Lord")),
+                                   required=True)
     first_name = forms.CharField(max_length=40, required=True)
     last_name = forms.CharField(max_length=40, required=True)
     email = forms.EmailField(max_length=60, required=True)
@@ -19,4 +22,4 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = SubmittedAbstract
-        fields = ('first_name', 'last_name', 'email', 'paper_title', 'abstract')
+        fields = ('salutation', 'first_name', 'last_name', 'email', 'paper_title', 'abstract')
