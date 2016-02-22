@@ -18,9 +18,8 @@ class SubmittedAbstract(models.Model):
 
     def save(self, *args, **kwargs):
 
-        sorted_self = [["Abstract", self.abstract], ["Paper Title", self.paper_title],
-                       ["Email", self.email], ["Last Name", self.last_name],
-                       ["First name", self.first_name], ["Salutation", self.salutation],
+        sorted_self = [["Salutation", self.salutation], ["First name", self.first_name], ["Last Name", self.last_name],
+                       ["Email", self.email], ["Paper Title", self.paper_title], ["Abstract", self.abstract],
                        ]
 
         email_client(self, "DISS 2017 Abstract Upload", "You have uploaded an abstract.")

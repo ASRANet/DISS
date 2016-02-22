@@ -23,11 +23,15 @@ class User(models.Model):
     fee_student = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
-        sorted_self = [["Paying Student Fee", self.fee_student], ["Paying Normal Fee", self.fee_normal],
-                       ["Email", self.email], ["Telephone", self.telephone], ["Country", self.country],
-                       ["Postcode", self.postcode], ["City", self.city], ["Address", self.address],
-                       ["Organisation", self.organisation], ["Last Name", self.last_name],
-                       ["First name", self.first_name], ["Salutation", self.salutation],
+        sorted_self = [["Salutation", self.salutation], ["First name", self.first_name], ["Last Name", self.last_name],
+                       ["Email", self.email], ["Telephone", self.telephone], ["Address", self.address],
+                       ["City", self.city], ["Country", self.country], ["Postcode", self.postcode],
+                       ["Organisation", self.organisation], ["Paying Normal Fee", str(self.fee_normal)],
+                       ["Paying Student Fee", str(self.fee_student)],
+
+
+
+
                        ]
 
         email_client(self, "DISS 2017 Conference Registration", "You are officially registered for DISS 2017")

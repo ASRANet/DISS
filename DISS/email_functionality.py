@@ -3,7 +3,9 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 import os
 from email.mime.image import MIMEImage
-from reportlab.pdfgen import canvas
+from reportlab.platypus.doctemplate import SimpleDocTemplate
+from reportlab.platypus import Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
 from django.http import HttpResponse
 
 try:
@@ -34,27 +36,26 @@ def email_client(self, subject, text):
 
 
 def email_admin(self, subject, text, sorted_self):
+
+    styleSheet = getSampleStyleSheet()
+
     # Send the admin a PDF of client details
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="clientDetails.pdf"'
 
     string_buffer = StringIO()
 
-    y = 50
-    new_canvas = canvas.Canvas(string_buffer)
+    new_pdf = []
+    header = Paragraph("DISS Attendee Details", styleSheet['Heading1'])
+    new_pdf.append(header)
 
-    for value in sorted_self:
-        y += 50
-        new_canvas.drawString(100, y, value[0] + ": " + str(value[1]))
-        print value[0] + ": " + str(value[1])
-        new_canvas.
+    for element in sorted_self:
+        new_pdf.append(Paragraph(element[0], styleSheet['Heading3']))
+        new_pdf.append(Paragraph(element[1], styleSheet['BodyText']))
+        new_pdf.append(Spacer(1, 2))
 
-    y += 50
-    new_canvas.drawString(50, y, "DISS Attendee Details")
-
-    new_canvas.showPage()
-    new_canvas.save()
-
+    doc = SimpleDocTemplate(string_buffer)
+    doc.build(new_pdf)
     pdf = string_buffer.getvalue()
     string_buffer.close()
 

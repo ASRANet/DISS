@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gkmzi%4!)7bu*n22n(s)m3(3zm@49l%16p+g)9(-&!g1^xmu0c'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost']
 
@@ -127,10 +127,7 @@ USE_TZ = True
 
 SESSION_COOKIE_SECURE = True
 
-EMAIL_HOST = 'mail.netcetera.co.uk'
-EMAIL_HOST_USER = 'diss@asranet.co.uk'
-EMAIL_HOST_PASSWORD = 'microsoftswallows'
-EMAIL_PORT = 25
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
