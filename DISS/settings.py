@@ -125,8 +125,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 EMAIL_HOST = 'mail.netcetera.co.uk'
 EMAIL_HOST_USER = 'diss@asranet.co.uk'
@@ -143,5 +143,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
-
-SITE_ID = 1

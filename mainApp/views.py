@@ -8,12 +8,12 @@ def index(request):
 
     story_list = Item.objects.filter(page__name="index").order_by('order')
 
-    return render(request, 'index.html', {"story_list": story_list})
+    return render(request, 'index.html', {"story_list": story_list, "title": "Home"})
 
 
 def venue(request):
     story_list = Item.objects.filter(page__name="venue").order_by('order')
-    return render(request, 'venue.html', {"story_list": story_list})
+    return render(request, 'venue.html', {"story_list": story_list, "title": "Venue"})
 
 
 def accomodation(request):
@@ -26,7 +26,7 @@ def contactus(request):
 
 def travel(request):
     story_list = Item.objects.filter(page__name="travel").order_by('order')
-    return render(request, 'baseTemplates/infoPageBase.html', {"story_list": story_list})
+    return render(request, 'baseTemplates/infoPageBase.html', {"story_list": story_list, "title": "Travel"})
 
 
 def cookies(request):
