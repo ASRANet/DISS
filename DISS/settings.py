@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gkmzi%4!)7bu*n22n(s)m3(3zm@49l%16p+g)9(-&!g1^xmu0c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'www.ship-dismantling.co.uk', 'ship-dismantling.co.uk']
 

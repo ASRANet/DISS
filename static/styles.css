@@ -106,9 +106,16 @@ body {
     padding-bottom: 2%;
 }
 
+#mobileCarousel{
+    display: none;
+}
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+.collapsed{
+    max-width: 100%;
+}
 
 @media (max-width: 992px) {
 
@@ -119,6 +126,7 @@ body {
         margin-left: 5%;
         margin-right: 5%;
         margin-top: 10%;
+        max-width: 100%;
     }
 
     .form-body{
@@ -127,6 +135,14 @@ body {
         margin-top: 10%;
     }
 
+    #myCarousel{
+        display: none;
+    }
+
+    #mobileCarousel{
+        display: block;
+        max-height: 50%;
+    }
 
 }
 @media (min-width: 768px) {
@@ -206,8 +222,18 @@ color: white; !important;
 
 .back-to-top{
 
+    text-align: center;
     position: fixed;
     bottom: 5%;
     left: 5%;
+
+}
+
+#progressDiv{
+
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 
 }
