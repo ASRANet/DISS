@@ -59,6 +59,6 @@ def email_admin(self, subject, text, sorted_self):
     pdf = string_buffer.getvalue()
     string_buffer.close()
 
-    msg = EmailMultiAlternatives(subject, text, "diss@asranet.co.uk", ["blair.calderwood@asranet.co.uk"])
+    msg = EmailMultiAlternatives(subject, text, "diss@asranet.co.uk", ["diss@asranet.co.uk"])
     msg.attach(self.first_name + self.last_name + "DISS.pdf", pdf, "application/pdf")
     msg.send()

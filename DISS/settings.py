@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'mainApp',
     'register',
     'uploadAbstract',
-    'email_html',
     'ckeditor'
 ]
 
