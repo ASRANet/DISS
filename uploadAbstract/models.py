@@ -26,5 +26,7 @@ class SubmittedAbstract(models.Model):
         email_admin(self, "New DISS 2017 Abstract", "Please find enclosed the details for the new DISS "
                                                     "2017 abstract upload.", sorted_self)
 
+        super(SubmittedAbstract, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return self.email

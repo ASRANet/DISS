@@ -35,5 +35,7 @@ class User(models.Model):
         email_admin(self, "New DISS 2017 Registrant", "Please find enclosed the details for the new DISS "
                                                       "2017 registrant.", sorted_self)
 
+        super(User, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return self.email
