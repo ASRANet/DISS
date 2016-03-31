@@ -80,11 +80,11 @@
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'uploadAbstract' %}">Upload Abstract</a></li>
                         <li><a href="{% url 'authorInstructions' %}">Author Instructions</a></li>
-                        <li><a href="{% url 'travel' %}" class="hidden-sm">Travel</a></li>
-                        <li><a href="{% url 'accomodation' %}" class="hidden-sm">Accommodation</a></li>
-                        <li><a href="{% url 'venue' %}" class="hidden-sm">Venue</a></li>
+                        <li><a href="{% url 'travel' %}" class="hidden-sm hidden-xs">Travel</a></li>
+                        <li><a href="{% url 'accomodation' %}" class="hidden-sm hidden-xs">Accommodation</a></li>
+                        <li><a href="{% url 'venue' %}" class="hidden-sm hidden-xs">Venue</a></li>
 
-                        <li class="dropdown visible-sm">
+                        <li class="dropdown visible-sm visible-xs">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">Other Details<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -116,19 +116,27 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-6 col-md-offset-2">
+            <div class="col-md-3">
 
                 <p><strong>ASRANet Ltd</strong></p>
                 <p>
                     St Georges Building<br/>
-                    3rd Floor<br/>
                     5 St Vincent Place<br/>
-                    Glasgow, G1 2DH
+                    Glasgow, G1 2DH<br/>
+                    Scotland, UK<br/>
                 </p>
 
             </div>
 
-            <h4 class="col-md-3 pull-right"><a href="{% url 'cookies' %}">Privacy and Cookie Policy</a></h4>
+            <div class="col-md-3">
+                <strong>Email: </strong><a href="mailto:info@asranet.co.uk">info@asranet.co.uk</a><br/>
+            </div>
+
+            <div class="col-md-3">
+                <strong>Website: </strong><a href="http://asranet.co.uk">asranet.co.uk</a><br/>
+            </div>
+
+            <h4 class="col-md-3"><a href="{% url 'cookies' %}">Privacy and Cookie Policy</a></h4>
 
         </div>
 
