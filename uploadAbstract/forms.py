@@ -23,6 +23,6 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = SubmittedAbstract
-        fields = ('salutation', 'primary_author_first_name', 'primary_author_surname',
+        fields = ('salutation', 'first_name', 'last_name',
                   'co_authors_names', 'email', 'paper_title', 'abstract')
 
