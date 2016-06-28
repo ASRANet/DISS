@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['diss_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'www.ship-dismantling.co.uk', 'ship-dismantling.co.uk', '127.0.0.1']
 
@@ -119,10 +119,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-
-SSLIFY_DISABLE = True
+if DEBUG:
+    SSLIFY_DISABLE = True
+else:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 EMAIL_HOST = 'mail.netcetera.co.uk'
 EMAIL_HOST_USER = 'diss@asranet.co.uk'

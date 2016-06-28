@@ -29,6 +29,9 @@ def accomodation(request):
 def contactus(request):
     return render(request, 'contactUs.html')
 
+def otherconferences(request):
+    return render(request, 'otherConferences.html')
+
 
 def travel(request):
     story_list = Item.objects.filter(page__name="travel").order_by('order')
